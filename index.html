@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>internet hotspot > login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="-1" />
+		<style type="text/css">
+			body {
+				/* 		background: #1a1a1a; */
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				overflow-y: hidden;
+				background: linear-gradient(to bottom right, #000000, #222222, #333333);
+
+				/* background-image: radial-gradient(at 54.6% 20.9%, hsl(0, 0%, 10%) 0px, transparent 50%),
+					radial-gradient(at 85.2% 54.5%, hsl(0, 0%, 13%) 0px, transparent 50%),
+					radial-gradient(at 6.6% 41.5%, hsl(0, 0%, 20%) 0px, transparent 50%);
+ */
+				color: #737373;
+				font-size: 10px;
+				font-family: verdana;
+			}
+
+			input {
+				width: 250px;
+				background-color: #1a1a1a;
+				border: none;
+				padding: 10px;
+				border-radius: 10px;
+				outline: none;
+				color: white;
+			}
+
+			input:focus {
+				animation: rotateShadow 2s infinite linear;
+			}
+
+			@keyframes rotateShadow {
+				0% {
+					box-shadow: -2px -2px 0px 0px #aa00ff, 2px 2px 0px 0px #3700ff;
+				}
+				25% {
+					box-shadow: -2px 2px 0px 0px #aa00ff, 2px -2px 0px 0px #3700ff;
+				}
+				50% {
+					box-shadow: 2px 2px 0px 0px #aa00ff, -2px -2px 0px 0px #3700ff;
+				}
+				75% {
+					box-shadow: 2px -2px 0px 0px #aa00ff, -2px 2px 0px 0px #3700ff;
+				}
+				100% {
+					box-shadow: -2px -2px 0px 0px #aa00ff, 2px 2px 0px 0px #3700ff;
+				}
+			}
+
+			a,
+			a:link,
+			a:visited,
+			a:active {
+				color: #aaaaaa;
+				text-decoration: none;
+				font-size: 10px;
+			}
+			a:hover {
+				border-bottom: 1px dotted #c1c1c1;
+				color: #aaaaaa;
+			}
+			img {
+				border: none;
+			}
+
+			.Login {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				width: 400px;
+				height: 400px;
+				background: #333333;
+				border-radius: 10pt;
+			}
+
+            .Login div{
+                margin-top: 10px;
+            }
+
+            .Powered {
+                position: relative;
+                top: 50px;
+            }
+		</style>
+	</head>
+
+	<body>
+		<!-- $(if chap-id) -->
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="username" />
+			<input type="hidden" name="password" />
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+		</form>
+
+		<script type="text/javascript" src="/md5.js"></script>
+		<script type="text/javascript">
+			<!--
+			function doLogin() {
+				document.sendin.username.value = document.login.username.value
+				document.sendin.password.value = hexMD5(
+					"$(chap-id)" + document.login.password.value + "$(chap-challenge)",
+				)
+				document.sendin.submit()
+				return false
+			}
+			//-->
+		</script>
+		<!-- $(endif) -->
+
+		<div align="center">
+			<a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)"></a>
+		</div>
+
+		<div class="notice" style="color: #c1c1c1; font-size: 9px">
+			Please log on to use the internet hotspot service<br />$(if trial == 'yes')Free trial
+			available,
+			<a
+				style="color: #ff8080"
+				href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
+				>click here</a
+			>.$(endif)
+		</div>
+		<div class="Login">
+			<form
+				name="login"
+				action="$(link-login-only)"
+				method="post"
+				$(if
+				chap-id)
+				onSubmit="return doLogin()"
+				$(endif)>
+				<input type="hidden" name="dst" value="$(link-orig)" />
+				<input type="hidden" name="popup" value="true" />
+
+				<h1>Login</h1>
+
+				<!-- 			<td align="right">login</td> -->
+
+				<div>
+					<input name="username" type="text" value="$(username)" placeholder="Username" />
+				</div>
+
+				<div>
+					<input name="password" type="password" placeholder="password" />
+				</div>
+
+				<div>
+					<input type="submit" value="Submit" />
+				</div>
+			</form>
+
+			<!-- <a href="http://www.mikrotik.com" target="_blank" style="border: none"
+				><img src="img/logobottom.png" alt="mikrotik"
+			/></a> -->
+
+			<br />
+			<div  class="Powered" style="color: #c1c1c1; font-size: 11px;">Powered by Tim 12 | XI TKJ 3</div>
+
+			<!-- $(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)  -->
+		</div>
+
+		<script type="text/javascript">
+			<!--
+			document.login.username.focus()
+			//-->
+		</script>
+	</body>
+</html>
