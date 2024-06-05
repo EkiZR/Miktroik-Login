@@ -1,61 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<title>internet hotspot > login</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>XI TKJ 3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta http-equiv="expires" content="-1" />
 		<style type="text/css">
 			body {
-				/* 		background: #1a1a1a; */
 				height: 100vh;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				flex-direction: column;
 				overflow-y: hidden;
-				background: linear-gradient(to bottom right, #000000, #222222, #333333);
-
-				/* background-image: radial-gradient(at 54.6% 20.9%, hsl(0, 0%, 10%) 0px, transparent 50%),
-					radial-gradient(at 85.2% 54.5%, hsl(0, 0%, 13%) 0px, transparent 50%),
-					radial-gradient(at 6.6% 41.5%, hsl(0, 0%, 20%) 0px, transparent 50%);
- */
 				color: #737373;
 				font-size: 10px;
 				font-family: verdana;
-			}
-
-			input {
-				width: 250px;
-				background-color: #1a1a1a;
-				border: none;
-				padding: 10px;
-				border-radius: 10px;
-				outline: none;
-				color: white;
-			}
-
-			input:focus {
-				animation: rotateShadow 2s infinite linear;
-			}
-
-			@keyframes rotateShadow {
-				0% {
-					box-shadow: -2px -2px 0px 0px #aa00ff, 2px 2px 0px 0px #3700ff;
-				}
-				25% {
-					box-shadow: -2px 2px 0px 0px #aa00ff, 2px -2px 0px 0px #3700ff;
-				}
-				50% {
-					box-shadow: 2px 2px 0px 0px #aa00ff, -2px -2px 0px 0px #3700ff;
-				}
-				75% {
-					box-shadow: 2px -2px 0px 0px #aa00ff, -2px 2px 0px 0px #3700ff;
-				}
-				100% {
-					box-shadow: -2px -2px 0px 0px #aa00ff, 2px 2px 0px 0px #3700ff;
-				}
+				background-image: url("https://i.ibb.co.com/jJ2JhP4/kereta.gif");
+				background-repeat: no-repeat;
+				background-size: cover;
 			}
 
 			a,
@@ -81,18 +45,25 @@
 				flex-direction: column;
 				width: 400px;
 				height: 400px;
-				background: #333333;
+				/* From https://css.glass */
+				background: rgba(31, 29, 29, 0.15);
+				border-radius: 16px;
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(6.6px);
+				-webkit-backdrop-filter: blur(6.6px);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+
 				border-radius: 10pt;
 			}
 
-            .Login div{
-                margin-top: 10px;
-            }
+			.Login div {
+				margin-top: 10px;
+			}
 
-            .Powered {
-                position: relative;
-                top: 50px;
-            }
+			.Powered {
+				position: relative;
+				top: 50px;
+			}
 		</style>
 	</head>
 
@@ -167,7 +138,9 @@
 			/></a> -->
 
 			<br />
-			<div  class="Powered" style="color: #c1c1c1; font-size: 11px;">Powered by Tim 12 | XI TKJ 3</div>
+			<div class="Powered" style="color: #c1c1c1; font-size: 11px">
+				Powered by Tim 12 | XI TKJ 3
+			</div>
 
 			<!-- $(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)  -->
 		</div>
